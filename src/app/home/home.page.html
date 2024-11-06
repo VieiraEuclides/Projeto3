@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Catálogo de Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail slot="start">
+        <img [src]="item.image" alt="{{ item.title }}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.title }}</h2>
+        <p>Preço: {{ item.price }}</p>
+        <p>Peso: {{ item.weight }}</p>
+        <p>{{ item.description }}</p>
+      </ion-label>
+      <ion-button (click)="goToFormPage(item)">Personalizar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
